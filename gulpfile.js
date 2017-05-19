@@ -8,7 +8,9 @@ var gulp = require('gulp'),
     twig = require('gulp-twig'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
-    rimraf = require('rimraf'),   
+    rimraf = require('rimraf'),  
+    sourcemaps = require('gulp-sourcemaps'),
+    htmlbeautify = require('gulp-html-beautify'), 
     util = require('gulp-util');
 
 var config = {
@@ -41,6 +43,7 @@ gulp.task('images', function() {
 
 gulp.task('sass', function() {
     return gulp.src('src/sass/**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))
         .on("error", notify.onError(function(error) {
             return "Error: " + error.message;
@@ -50,7 +53,8 @@ gulp.task('sass', function() {
         }))
         .pipe(rename({
             suffix: '.min'
-        }))        
+        }))
+        .pipe(sourcemaps.write('./'))        
         .pipe(gulp.dest('dist/css')).pipe(browserSync.reload({
             stream: true
         }));
@@ -71,6 +75,7 @@ gulp.task('scripts', function() {
 gulp.task('views', function() {
     return gulp.src('src/views/pages/*.twig')
         .pipe(twig())
+        .pipe(htmlbeautify())
         .on("error", notify.onError(function(error) {
             return "Error: " + error.message;
         }))        

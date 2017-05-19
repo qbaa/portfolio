@@ -49,8 +49,6 @@
   <link rel="alternate" type="application/json" href="{{ url }}/page.json">
   <!--  The most canonical version of this page. Helps SEO. https://moz.com/blog/canonical-url-tag-the-most-important-advancement-in-seo-practices-since-sitemaps  -->
   <link rel="canonical" href="{{ url }}">
-  <!-- Also overrides http equivalent header, for CSP rules. https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src localhost:8080 localhost:8080 *.example.com 'self' 'unsafe-inline' 'unsafe-eval' data:;">
   <!--  http equivalent header. This will protect your referrer from being abused or leaked. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy  -->
   <meta http-equiv="Referrer-Policy" content="same-origin">
   <!--  viewport, this tells mobile browsers how to scale page content. https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag  -->
