@@ -1,0 +1,23 @@
+{
+  "name": "front-start",
+  "description": "Simple frontend project",
+  "version": "1.0.0",
+  "author": "Jakub Bulanda <kontakt@jakubbulanda.pl>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp-notify": "^2.2.0"
+  },
+  "dependencies": {
+  	"rimraf": "^2.5.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-twig": "^0.7.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7"
+  }  
+}
