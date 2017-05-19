@@ -3,7 +3,6 @@
 //----------------------------------*/
 
 @import 'abstracts/_variables.scss';
-@import 'abstracts/_bootstrap_custom.scss';
 @import 'abstracts/_functions.scss';
 @import 'abstracts/_mixins.scss';
 
@@ -11,13 +10,14 @@
 // Vendors
 //----------------------------------*/
 
-@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss'; 
+@import '../../bower_components/normalize-css/normalize'; 
 
 //----------------------------------*\
 // Base
 //----------------------------------*/
 
 @import 'base/_base.scss';
+@import 'base/_grid.scss';
 @import 'base/_fonts.scss';
 @import 'base/_typography.scss';
 @import 'base/_helpers.scss';

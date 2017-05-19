@@ -1,0 +1,20 @@
+//breakpoints
+
+$small: 600px !default;
+$medium: 992px !default;
+$large: 1280px !default;
+
+$small-min: $small !default;
+$medium-min: $medium !default;
+$large-min: $large !default;
+
+$small-max: $medium-min - 1 !default;
+$medium-max: $large-min - 1 !default;
+
+//grid
+
+$gutter: 30px !default;
+
+$small-container: 700px !default;
+$medium-container: 900px !default;
+$large-container: 1200px !default;

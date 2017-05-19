@@ -14,7 +14,6 @@ var gulp = require('gulp'),
 var config = {
     js: [
         'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
         'src/js/scripts.js'
     ],
     prod: !!util.env.prod
