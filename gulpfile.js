@@ -36,7 +36,7 @@ gulp.task('clean', function() {
 require('events').EventEmitter.defaultMaxListeners = 0;
 
 gulp.task('images', function() {
-    gulp.src('src/img/**/*.{jpg,png,gif}')
+    gulp.src('src/img/**/*.{jpg,png,gif,svg}')
         .pipe(imagemin())      
         .pipe(gulp.dest('dist/img'));
 });

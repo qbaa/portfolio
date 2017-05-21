@@ -2,13 +2,17 @@
     box-sizing: border-box;
 }
 
-*:after,
-*:before {
-	content: '';
-}
-
 img {
     width: auto;
     max-width: 100%;
     height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $montserrat;
 }
