@@ -3,4 +3,15 @@
     z-index: 50;
     width: 100%;
     min-height: 100px;
+    .logo {
+        margin-top: 50px;
+        margin-left: 50px;
+        svg {
+            width: 70px;
+            height: 40px;
+            path {
+                fill: #fff;
+            }
+        }
+    }
 }

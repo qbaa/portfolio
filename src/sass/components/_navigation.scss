@@ -50,12 +50,12 @@ $menu-border: 10px;
                 transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
             }
         }
-    }
+    }  
 }
 
 .navigation {
     position: fixed;
-    z-index: 10;
+    z-index: 30;
     top: $menu-border;
     left: $menu-border;
     width: calc(100% -  #{$menu-border}*2);
