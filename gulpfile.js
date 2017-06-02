@@ -16,6 +16,7 @@ var gulp = require('gulp'),
 var config = {
     js: [
         'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/waypoints/lib/jquery.waypoints.min.js',
         'src/js/modules/**/*.js',
         'src/js/main.js'
     ],

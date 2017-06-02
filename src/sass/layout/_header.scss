@@ -14,4 +14,31 @@
             }
         }
     }
+    &.black {
+        .logo {
+            svg {
+                path {
+                    fill: #000;
+                }
+            }
+        }
+        .menu-button__line {
+            background: #000;
+        }
+    }    
+    &.header--navigation-active {
+
+        .logo {
+            svg {
+                path {
+                    transition: 0.3s fill;
+                    fill: #fff;
+                }
+            }
+        }
+        .menu-button__line {
+            transition: background 0.3s, opacity 0.3s, transform 0.3s;
+            background: #fff;
+        }
+    }
 }

@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="main">
+<div class="main" id="main">
 	<div class="background-image"></div>
 	<div class="background">
 		<svg xmlns="http://www.w3.org/2000/svg" width="7256.693" height="4081.89" viewBox="0 0 1920 1080"><g fill-rule="evenodd"><path d="M.05 357.337l-.96 206.18 54.548-48.902z" fill="#e25550"/><path d="M99.002 455.976L-.91 563.517l139.651 84.834z" fill="#e20150"/><path d="M138.741 648.35L-.91 563.518 98.743 770.6z" fill="#140188"/><path d="M244.654 607.271L99.002 455.976l39.739 192.375z" fill="#e20113"/><path d="M369.249 543.181l-230.508 105.17 104.867 63.003z" fill="#e28613"/><path d="M98.743 770.6L-.91 563.516l.917 262.728z" fill="#ff01e8"/><path d="M.05 357.337l51.584 149.26 47.368-50.621z" fill="#e2ec50"/><path d="M369.249 543.181l-189.742-1.031 60.612 60.302z" fill="#e201c8"/><path d="M99.002 455.976l197.973-56.816-89.003-58.597z" fill="#46ec50"/><path d="M296.975 399.16L99.002 455.976 369.25 543.18z" fill="#46ecf1"/><path d="M99.002 455.976l80.505 86.174 189.742 1.031z" fill="#46d1a8"/><path d="M-.22 228.923l.27 128.414 207.922-16.774z" fill="#e2a950"/><path d="M153.45 180.685L-.22 228.923l208.192 111.64z" fill="#1ba950"/><path d="M350.415 255.92L153.45 180.685l54.522 159.878z" fill="#cd0b50"/><path d="M350.415 255.92l-142.443 84.643 89.003 58.597z" fill="#cdd050"/><path d="M449.513 461.605L296.975 399.16l72.274 144.021z" fill="#cd2750"/><path d="M369.249 543.181L243.608 711.354l137.78-6.538z" fill="#e2fa13"/><path d="M243.608 711.354L98.743 770.599l49.852 77.102z" fill="#14f888"/><path d="M98.743 770.6L.007 826.244 148.595 847.7z" fill="#ff012e"/><path d="M72.167 100.091L-.22 228.923l153.669-48.238z" fill="#e8a950"/><path d="M243.608 711.354L148.595 847.7l164.57-67.99z" fill="#e5f888"/><path d="M270.687 142.165l-117.237 38.52 196.965 75.235z" fill="#cd0be4"/><path d="M.05 357.337l98.952 98.639 108.97-115.413z" fill="#8c4950"/><path d="M243.608 711.354L138.741 648.35 98.743 770.599z" fill="#14b288"/></g></svg>
@@ -35,33 +35,94 @@
 			</div>
 		</div>
 	</div>
-	<a href="#" class="mouse">
+	<a href="#about" class="mouse scroll-to-page no-timeout">
         <span class="mouse__scroll"></span>
     </a>
 </div>
 
-<div class="section">
+<div class="section about section-white" id="about">
 	<div class="container">
 		<div class="row">
-			<div class="col col-small-6">a</div>
-			<div class="col col-small-6">b</div>
-		</div>	
-		<div class="row">
-			<div class="col col-medium-6">a</div>
-			<div class="col col-medium-6">b</div>
-		</div>	
-		<div class="row">
-			<div class="col col-large-6">a</div>
-			<div class="col col-large-6">b</div>
-		</div>	
-		<div class="row">
-			<div class="col col-largest-1">a</div>
-			<div class="col col-largest-2">b</div>
-			<div class="col col-largest-3">b</div>
-			<div class="col col-largest-4">b</div>
-			<div class="col col-largest-2">b</div>
+			<div class="col col-largest-6 col-small-12">
+				<h2>o mnie.</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ducimus accusantium, vitae earum velit cum? Magni nesciunt non doloribus, harum similique, quos earum aut, excepturi ut id hic aspernatur cumque.</p>				
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio minus ut ipsam? Vero commodi libero, cum dolore obcaecati enim nam at nobis voluptas doloremque nihil impedit quam iste totam, id!
+				Officiis eos culpa tempore libero quidem, quas maiores, et esse in rerum delectus explicabo iste ducimus inventore unde nostrum placeat, non sed! Illum nesciunt accusamus, nulla provident tempore molestias suscipit.</p>
+			</div>
 		</div>
 	</div>
 </div>
+
+<div class="section portfolio section-white" id="portfolio">
+	<div class="container">
+		<div class="row">
+			<div class="col col-small-12">
+				<h2>portfolio.</h2>
+
+	<div class="items">		
+		<div class="items__item items__item--mobile item">
+			<img src="img/biscontrol.png" alt="" />
+			<div class="item__desc">
+				<h4>Bis Control</h4>
+				<h5>Frontend</h5>
+			</div>
+		</div>			
+		<div class="items__item items__item--mobile item">
+			<img src="img/bst.png" alt="" />
+			<div class="item__desc">
+				<h4>BST</h4>
+				<h5>Frontend</h5>
+			</div>
+		</div>		
+		<!--<div class="item">
+			<a href="#">
+				<img src="img/boburger.jpg" alt="" />
+			</a>
+		</div>		
+		<div class="item">
+			<a href="#">
+				<img src="img/bst.jpg" alt="" />
+			</a>
+		</div>		
+		<div class="item">
+			<a href="#">
+				<img src="img/pbfoto.jpg" alt="" />
+			</a>
+		</div>		
+		<div class="item">
+			<a href="#">
+				<img src="img/przemyslawbialach.jpg" alt="" />
+			</a>
+		</div>		
+		<div class="item">
+			<a href="#">
+				<img src="img/rpwe.jpg" alt="" />
+			</a>
+		</div>		
+		<div class="item">
+			<a href="#">
+				<img src="img/sylwesterszymczuk.jpg" alt="" />
+			</a>
+		</div>			
+		<div class="item">
+			<a href="#">
+				<img src="img/wfm.jpg" alt="" />
+			</a>
+		</div>-->		
+	</div>
+</div>
+			</div>
+		</div>	
+	</div>
+
+<div class="section contact section-white" id="contact">
+	<div class="container">
+		<div class="row">
+			<h2>kontakt.</h2>
+		</div>
+	</div>
+</div>
+
+
 
 {% endblock content %}
