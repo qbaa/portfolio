@@ -12,4 +12,11 @@ $(function () {
 		$scroll: $('.scroll-to-page')
 	});
 
+	form.init({
+		$input: $('.contact').find('input'),
+		$textarea: $('.contact').find('textara'),
+		$inputs: $('.contact input, .contact textarea'),
+		$form: $('.contact').find('form')
+	});
+
 });
