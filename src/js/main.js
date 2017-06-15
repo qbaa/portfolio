@@ -16,7 +16,20 @@ $(function () {
 		$input: $('.contact').find('input'),
 		$textarea: $('.contact').find('textara'),
 		$inputs: $('.contact input, .contact textarea'),
-		$form: $('.contact').find('form')
+		$form: $('.contact').find('form'),
+		$back: $('.message--back')
 	});
+
+	footer.init({
+		$items: $('.contact__item a'),
+		$desc: $('.contact__desc')
+	});	
+
+	skills.init({
+		$items: $('.skill'),
+		$desc: $('.skill__desc')
+	});
+
+	animations.init();
 
 });

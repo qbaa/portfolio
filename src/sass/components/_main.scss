@@ -5,6 +5,8 @@
     color: #fff;
     display: table;
     position: relative;
+    z-index: 2;
+    -webkit-transform:translateZ(0);
     .content {
         display: table;
         width: 100%;
@@ -15,7 +17,8 @@
             display: table-cell;
             vertical-align: middle;
             h1 {
-                font-size: 12rem;
+                //font-size: 12rem;
+                font-size: calc(50px + (150 - 50) * ((100vw - 320px) / (1600 - 320)));
                 text-transform: uppercase;
                 margin: 0;
             }
@@ -23,13 +26,25 @@
                 font-family: $raleway;
                 font-weight: 300;
                 text-transform: uppercase;
-                font-size: 3rem;
+                font-size: 1.2rem;              
+                @include min($medium-min) {
+                    font-size: 2rem;
+                }                
+                @include min($largest-min) {
+                    font-size: 3rem;
+                }
                 .title-wrapper {
                     display: block;
                     &__title {
                         overflow: hidden;
                         position: absolute;
-                        height: 48px;
+                        height: 19px;
+                        @include min($medium-min) {
+                            height: 32px;
+                        }
+                        @include min($largest-min) {
+                            height: 48px;
+                        }
                         ul {
                             padding: 0;
                             margin: 0;
@@ -57,7 +72,7 @@
         height: 100vh;
         z-index: 1;   
         background-image: url(../img/background.jpg);
-        opacity: 0.05;
+        opacity: 0.1;
         background-size: cover;
     }
     .background {
@@ -181,7 +196,7 @@
         position: absolute;
         width: 22px;
         height: 42px;
-        bottom: 50px;
+        bottom: 20px;
         left: 50%;
         margin-left: -12px;
         border-radius: 15px;
@@ -189,6 +204,9 @@
         animation: intro 1s;
         z-index: 20;
         transition: transform .3s;
+        @include min($large-min) {
+            bottom: 50px;  
+        }
         &:hover {
             transform: scale(0.9);
         }
@@ -296,27 +314,87 @@
     0%,
     12.66%,
     100% {
-        padding-left: 110px;
+        padding-left: 50px;
     }
     16.66%,
     29.32% {
-        padding-left: 250px;
+        padding-left: 102px;
     }
     33.32%,
     45.98% {
-        padding-left: 280px;
+        padding-left: 115px;
     }
     49.98%,
     62.64% {
-        padding-left: 180px;
+        padding-left: 75px;
     }
     66.64%,
     79.3% {
-        padding-left: 290px;
+        padding-left: 115px;
     }
     83.3%,
     95.96% {
-        padding-left: 250px;
+        padding-left: 102px;
+    }
+}
+
+@include min($medium-min) {
+    @keyframes padding {
+        0%,
+        12.66%,
+        100% {
+            padding-left: 80px;
+        }
+        16.66%,
+        29.32% {
+            padding-left: 170px;
+        }
+        33.32%,
+        45.98% {
+            padding-left: 190px;
+        }
+        49.98%,
+        62.64% {
+            padding-left: 125px;
+        }
+        66.64%,
+        79.3% {
+            padding-left: 190px;
+        }
+        83.3%,
+        95.96% {
+            padding-left: 170px;
+        }
+    }
+}
+
+@include min($largest-min) {
+    @keyframes padding {
+        0%,
+        12.66%,
+        100% {
+            padding-left: 115px;
+        }
+        16.66%,
+        29.32% {
+            padding-left: 250px;
+        }
+        33.32%,
+        45.98% {
+            padding-left: 280px;
+        }
+        49.98%,
+        62.64% {
+            padding-left: 185px;
+        }
+        66.64%,
+        79.3% {
+            padding-left: 280px;
+        }
+        83.3%,
+        95.96% {
+            padding-left: 250px;
+        }
     }
 }
 

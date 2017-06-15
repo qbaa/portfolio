@@ -6,8 +6,23 @@ body {
 	font-family: $raleway;
 }
 
-a:link {
+a {
+	color: #F44336;
 	text-decoration: none;
+	display: inline-block;
+	&:after {
+		transition: 0.3s ease;
+	    width: 0;
+	    height: 2px;
+	    background: #F44336;
+	    content: '';
+	    display: block;
+	}
+	&:hover {
+		&:after {
+			width: 100%;
+		}
+	}
 }
 
 a:visited {

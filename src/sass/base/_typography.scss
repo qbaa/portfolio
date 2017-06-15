@@ -1,4 +1,8 @@
 p {
-	font-size: 1.3rem;
-	line-height: 1.7rem;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+	@include min($medium-min) {
+		font-size: 1.3rem;
+		line-height: 1.7rem;
+	}
 }

@@ -1,33 +1,57 @@
+$height-icon-m: 26px;
+$width-line-m: 40px;
+$height-line-m: 4px;
+
 $height-icon: 30px;
 $width-line: 50px;
 $height-line: 5px;
 
+
 $transition-time: 0.3s;
 $rotation: 45deg;
+$translateY-m: ($height-icon-m / 2);
 $translateY: ($height-icon / 2);
 $translateX: 0;
 
 $menu-border: 10px;
 
 .menu-button {
-    position: absolute;
-    top: 50px;
-    right: 50px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
     font-size: 0;
     cursor: pointer;
-    width: $width-line;
-    height: $height-icon;
+    width: $width-line-m;
+    height: $height-icon-m;
     transition: transform $transition-time;
+    @include min($medium-min) {
+        width: $width-line;
+        height: $height-icon;        
+        top: 30px;
+        right: 30px;
+    }        
+    @include min($large-min) {
+        top: 40px;
+        right: 40px;
+    }
+    @include min($largest-min) {
+        top: 50px;
+        right: 50px;
+    }
     &:hover {
         transform: scale(0.9);
     }    
     &__line {
-        width: $width-line;
-        height: $height-line;
+        width: $width-line-m;
+        height: $height-line-m;
         background: #fff;
         display: block;
         transition: transform $transition-time;
         position: absolute;
+        @include min($medium-min) {
+            width: $width-line;
+            height: $height-line;            
+        }
         &--line-1 {
             top: 0%;
         }        
@@ -42,13 +66,19 @@ $menu-border: 10px;
     &--active {
         .menu-button__line {
             &--line-1 {
-                transform: translateY($translateY) translateX($translateX) rotate($rotation);
+                transform: translateY($translateY-m) translateX($translateX) rotate($rotation);
+                @include min($medium-min) {
+                    transform: translateY($translateY) translateX($translateX) rotate($rotation);
+                }
             }
             &--line-2 {
                 opacity: 0;
             }            
             &--line-3 {
-                transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+                transform: translateY($translateY-m * -1) translateX($translateX) rotate($rotation * -1);
+                @include min($medium-min) {
+                    transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+                }
             }
         }
     }  
@@ -84,13 +114,17 @@ $menu-border: 10px;
             li {
                 a {
                     color: #fff;
-                    font-size: 4rem;
+                    //font-size: 4rem;
                     font-family: $montserrat;
                     font-weight: bold;
                     transition: $transition-time;
-                    line-height: 10rem;
+                    line-height: 5rem;
                     display: inline-block;
                     position: relative;
+                    font-size: calc(20px + (50 - 20) * ((100vw - 320px) / (1600 - 320)));
+                    @include min($small-min) {
+                        line-height: calc(50px + (150 - 50) * ((100vw - 320px) / (1600 - 320)));
+                    }                
                     &:after {
                         /*transition: $transition-time ease;
                         position: absolute;
@@ -103,11 +137,15 @@ $menu-border: 10px;
                         left: -20px;*/
                         transition: $transition-time ease;
                         width: 0;
-                        height: 5px;
+                        height: 3px;
                         background: #fff;
                         content: '';
                         display: block;
-                        margin-top: -25px;
+                        margin-top: -15px;
+                        @include min($small-min) {
+                            height: 5px;
+                            margin-top: -2vw;
+                        }
                     }                    
                     &:hover {
                        // padding-left: 10px;

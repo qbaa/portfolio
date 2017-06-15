@@ -1,14 +1,35 @@
 .header {
     position: fixed;
     z-index: 50;
-    width: 100%;
+    width: 0;
     min-height: 100px;
     .logo {
-        margin-top: 50px;
-        margin-left: 50px;
+        margin-top: 15px;
+        margin-left: 15px;
+        @include min($medium-min) {
+            margin-top: 30px;
+            margin-left: 30px;
+        }        
+        @include min($large-min) {
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+        @include min($largest-min) {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        a {
+            &:after {
+                display: none;
+            }
+        }
         svg {
-            width: 70px;
-            height: 40px;
+            width: 50px;
+            height: 30px;
+            @include min($medium-min) {
+                width: 70px;
+                height: 40px;
+            }
             path {
                 fill: #fff;
             }
@@ -27,7 +48,6 @@
         }
     }    
     &.header--navigation-active {
-
         .logo {
             svg {
                 path {
