@@ -1,0 +1,21 @@
+.offer {
+    @include min($largest-min) {
+        margin-bottom: -100px;
+    }
+    .offer {
+        text-align: center;
+        h3 {
+            font-size: 1.5rem;
+            @include min($medium-min) {
+            	font-size: 2rem;
+            }
+        }
+        p {
+            font-size: 1.1rem;
+            @include min($medium-min) {
+            	font-size: 1.2rem;
+            }
+        }
+    }
+}
+

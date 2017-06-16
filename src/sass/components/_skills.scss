@@ -1,0 +1,57 @@
+.skills {
+    padding: 50px 0 0;
+    text-align: center;
+    @include min($largest-min) {
+        padding: 100px 50px 50px;
+    }
+    .skill {
+        display: inline-block;
+        svg {
+            width: auto;
+            max-width: 200px;
+            height: 70px;
+            margin: 20px;
+            transition: all 0.3s;
+            opacity: 0.7;
+            @include min($small-min) {
+                width: auto;
+            }
+            @include min($largest-min) {
+                height: 100px;
+            }
+        }
+        &.hide {
+            svg {
+                opacity: 0.5;
+            }
+        }        
+        &:hover {
+            svg {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
+        &__desc {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            padding-top: 30px;
+            @include min($medium-min) {
+                padding-top: 50px;
+            }
+            span {
+                transition: 0.3s all;
+                opacity: 0;
+                color: #000;
+                font-size: 1.5rem;
+                position: absolute;
+                left: 0;
+                text-align: center;
+                width: 100%;
+                &.active {
+                    opacity: 1;
+                }
+            }            
+        }
+    }
+}

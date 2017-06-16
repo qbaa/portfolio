@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),  
     sourcemaps = require('gulp-sourcemaps'),
     htmlbeautify = require('gulp-html-beautify'), 
-    util = require('gulp-util');
+    util = require('gulp-util'),
+    connect = require('gulp-connect-php');
 
 var config = {
     js: [
@@ -92,11 +93,33 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('build', ['clean', 'sass', 'fonts', 'scripts', 'images', 'views']);
+gulp.task('php', function() {
+    return gulp.src('src/php/**/*.*')    
+        .pipe(gulp.dest('dist'));
+});
 
-gulp.task('default', ['build', 'browserSync'], function() {
+gulp.task('other', function() {
+    return gulp.src('src/other/**/*.*')    
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('connect', function() {
+    connect.server({
+      hostname: 'localhost',
+      bin: 'C:/xampp/php/php.exe',
+      ini: 'C:/xampp/php/php.ini',
+      port: 8080,
+      base: 'dist'
+    });
+
+});
+
+gulp.task('build', ['clean', 'sass', 'fonts', 'php', 'other', 'scripts', 'images', 'views']);
+
+gulp.task('default', ['build', 'connect', 'browserSync'], function() {
     gulp.watch('src/sass/**/*.scss', ['sass']); 
     gulp.watch('src/js/**/*.js', ['scripts']);
     gulp.watch('src/img/**/*.{jpg,png,gif}', ['images']);
     gulp.watch('src/views/**/*.twig', ['views']);
+    gulp.watch('src/php/**/*.php', ['php']);
 });  

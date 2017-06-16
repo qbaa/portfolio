@@ -49,6 +49,9 @@
             }
         }
         &__desc {
+            @include max($small-max) {
+                display: none;
+            }
             span {
                 transition: 0.3s all;
                 opacity: 0;

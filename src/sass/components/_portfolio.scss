@@ -1,8 +1,17 @@
 .portfolio {
-    overflow-x: hidden;
+    @include max($medium-max) {
+        padding-bottom: 0;
+        margin-bottom: -20px;
+    }
+    overflow: hidden;
+    z-index: 10;
     .items {
-        padding-top: 100px;
-        
+        @include min($medium-min) {
+            padding-top: 50px;
+        }
+        @include min($large-min) {
+            padding-top: 100px;
+        }
         &__item {
             position: relative;
             img {
@@ -11,21 +20,31 @@
                 max-height: 770px;
             }
             .item__desc {
-                white-space: nowrap;
                 color: #555;
-                opacity: 0;
+                opacity: 0.5;
                 transition: all 0.7s;
                 text-transform: uppercase;
                 position: relative;
                 z-index: 10;
+                transform: translateY(-10px);
+                @include min($medium-min) {
+                    white-space: nowrap;
+                    opacity: 0;
+                }
                 h4 {
-                    font-size: 3rem;
+                    font-size: 2rem;
                     margin-bottom: 10px;
+                    @include min($large-min) {
+                        font-size: 3rem;
+                    }
                 }
                 h5 {
-                    font-size: 1.5rem;
+                    font-size: 1rem;
                     margin: 0 0 15px;
                     font-weight: normal;
+                    @include min($large-min) {
+                       font-size: 1.5rem; 
+                    }
                 }
                 a {
                     font-size: 1rem;
@@ -48,27 +67,48 @@
             }
             &--mobile {
                 float: left;
-                width: 50%;
+                width: 100%;
                 padding: 10px;
                 margin-bottom: 150px;
+                @include max($small-max) {
+                    text-align: center;
+                }
+                @include min($medium-min) {
+                   width: 50%; 
+                }
                 img {
-                    max-width: 70%;
+                    @include min($medium-min) {
+                        max-width: 70%;
+                    }
                 }
                 .item__desc {
                     position: absolute;
-                    top: 20px;
-                    left: 75%;
-                    transform: translateX(-50px);
+                    @include max($medium-max) {
+                        width: 100%;
+                        left: 0;
+                    }
+                    @include min($medium-min) {
+                        top: 20px;
+                        left: 75%;
+                        transform: translateX(-50px);
+                    }
                 }
                 &-right {
-                    text-align: right;
+                    text-align: center;
+                    @include min($medium-min) {
+                        text-align: right;
+                    }
                     .item__desc {
-                        left: auto;
-                        right: 75%;
+                        @include min($medium-min) {
+                            left: auto;
+                            right: 75%;
+                        }
                     }
                 }
                 &-top {
-                    margin-top: 200px;
+                    @include min($medium-min) {
+                        margin-top: 200px;
+                    }
                 }
                 &-left-small {
                     .item__desc {
@@ -76,25 +116,50 @@
                     }                    
                 }  
                 &-bottom {
-                    margin-bottom: 0;
+                    @include min($medium-min) {
+                        margin-bottom: 0;
+                    }
                 }              
             }
             &--desktop {
                 width: 100%;
                 float: left;
-                margin-bottom: 100px;
+                margin-bottom: 30px;
+                @include max($small-max) {
+                    text-align: center;
+                    margin-top: 10px;
+                }
+                @include min($medium-min) {
+                    margin-bottom: 100px;
+                }
                 .item__desc {
-                    transform: translateY(-50px);
+                    @include min($medium-min) {
+                        transform: translateY(-50px);
+                    }
                 }    
                 &-right {
                     .item__desc {
-                        margin-top: -50px;
-                        margin-bottom: -100px;
-                        text-align: right;
+                        @include min($medium-min) {
+                            margin-top: -50px;
+                            margin-bottom: -100px;
+                            text-align: right;
+                        }
                     }
-                }  
-                &-bottom {
-                    margin-bottom: 200px;
+                }              
+                &-bottom {                   
+                    @include max($small-max) {
+                        padding-bottom: 200px;
+                    }
+                    @include min($medium-min) {
+                        margin-bottom: 200px;
+                    }
+                    .item__desc {
+                        @include max($small-max) {
+                            width: 100%;
+                            position: absolute;
+                            bottom: 20px;
+                        }
+                    }
                 }          
             }
         }

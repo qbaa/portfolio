@@ -14,7 +14,7 @@ $(function () {
 
 	form.init({
 		$input: $('.contact').find('input'),
-		$textarea: $('.contact').find('textara'),
+		$textarea: $('.contact').find('textarea'),
 		$inputs: $('.contact input, .contact textarea'),
 		$form: $('.contact').find('form'),
 		$back: $('.message--back')

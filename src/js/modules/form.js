@@ -72,20 +72,20 @@ var form = (function() {
         var values = $(this).serialize();
 
         $.ajax({
-            url: '/ajax/sendmail',
+            url: 'mail.php',
             type: "POST",
             data: values
         }).done(function(data){
-            setTimeout(function(){
-                //alert("OK");
+            //alert("OK");
+            if (data == "ok") {
                 s.$form.addClass('form--ok');
-            }, 2000);
+            } else {
+                s.$form.addClass('form--error');
+            }
         }).fail(function() {
-            setTimeout(function(){
-                //alert("Blad");
-               s.$form.addClass('form--error');
-               //s.$form.addClass('form--ok');
-            }, 2000);
+            //alert("Blad");
+            s.$form.addClass('form--error');
+            //s.$form.addClass('form--ok');
         });        
 
         /*if ($name.val().length < 1) {
@@ -112,10 +112,23 @@ var form = (function() {
         //alert("g");
     };
 
+    var textarea = document.querySelector('textarea');
+
+
+             
+    var autosize = function() {
+        var el = this;
+        setTimeout(function(){
+            el.style.cssText = 'height: auto; padding: 12px; border: 0;';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+        }, 0);
+    };
+
     var back = function(e) {
         e.preventDefault();
         s.$form.removeClass();
         s.$form[0].reset();
+        s.$inputs.removeClass("input--active");
     };
 
     var init = function(config) {
@@ -124,6 +137,7 @@ var form = (function() {
         s.$inputs.on('blur', addActive);
         s.$form.on('submit', submit);
         s.$back.on('click', back);
+        s.$textarea.on('keydown', autosize);
     };
 
     return {

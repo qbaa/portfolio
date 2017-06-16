@@ -1,0 +1,201 @@
+.section.contact {
+    padding-top: 50px;
+    margin-bottom: 100px;
+    padding-bottom: 20vh;
+    @include min($medium-min) {
+        margin-bottom: 300px;
+    }
+    .col {
+        position: relative;
+    }
+    label {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        transform: translateY(-5px);
+        z-index: -1;
+        transition: transform 0.3s, font-size 0.3s, opacity 0.5s;
+        font-size: 1.5rem;
+        @include min($large-min) {
+            transform: translateY(10px);
+            font-size: 2rem;
+        }
+    }
+    input, 
+    textarea  {
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid #000;
+        outline: none;
+        font-size: 1rem;
+        margin-bottom: 100px;
+        height: 30px;
+        padding: 10px 0;
+        background: none;
+        @include min($large-min) {
+            font-size: 2rem;
+            margin-bottom: 150px;
+            height: 56px;
+        }
+        &.input--error {
+            border-bottom: 2px solid #F44336;
+            +label {
+                //color: #F44336;
+            }
+        }
+        &:focus, 
+        &.input--active {
+            +label {
+                transform: translateY(-20px);
+                font-size: 1.2rem;
+            }
+        }
+    }
+    button {
+        margin: 0 auto;
+        display: block;
+        border: 0;
+        background: #fff;
+        border: 3px solid #F44336;
+        color: #F44336;        
+        font-family: $montserrat;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 10px 30px;
+        cursor: pointer;
+        //border-radius: 30px;
+        outline: none;
+        transition: all 0.3s;
+        @include min($large-min) {
+            border: 5px solid #F44336;
+            font-size: 1.5rem;
+            padding: 20px 50px;
+        }
+        &:after {
+            content:"Wyślij"
+        }
+        &:hover {
+            background: #F44336;
+            color: #fff;
+        }
+    }
+    form {
+        position: relative;
+        margin-top: 50px;
+        input, 
+        textarea {
+            transition: opacity 0.5s;
+            overflow: hidden;
+        }
+        .form__status {
+            display: none;
+            text-align: center;
+            font-size: 2rem;
+            position: absolute;
+            width: 100vw;
+            height: 100%;
+            z-index: 10;
+            .message {
+                display: none;
+                margin-top: 12%;
+                a {
+                    display: inline-block;
+                    margin-top: 20px;
+                    &:after {
+                        transition: 0.3s ease;
+                        width: 0;
+                        height: 2px;
+                        background: #F44336;
+                        content: '';
+                        display: block;
+                        margin-top: 2px;
+                    }
+                    &:hover {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
+                }
+                span {
+                    display: block;
+                }
+            }
+        }
+        &.form--send {
+            input, 
+            label, 
+            textarea {
+                opacity: 0;
+            }
+            .form__status {
+                display: block;
+            }
+            .message--send {
+                display: block;
+            }
+            button {
+                @include max($small-max) {
+                    margin-top: -200px;
+                }
+                width: 74px;
+                height: 74px;
+                border-radius: 100%;
+                background: #fff;
+                padding: 0;
+                border: 5px solid #ccc;
+                border-left-color: #F44336;
+                animation: rotate 2s linear infinite;
+                cursor: normal;
+                &:after {
+                    content:"";
+                }
+            }
+        }
+        &.form--ok {
+            .message {
+                display: none;
+            }
+            .message--ok {
+                display: block;
+            }
+             button {
+                background: #4CAF50;
+                border: 5px solid #4CAF50;
+                color: #fff;
+                animation: none;
+                font-size: 3rem;
+                &:after {
+                    content:"✔";
+                }
+            }            
+        }
+        &.form--error {
+            .message {
+                display: none;
+            }            
+            .message--error {
+                display: block;
+            }
+             button {
+                background: #F44336;
+                border: 5px solid #F44336;
+                color: #fff;
+                animation: none;
+                font-size: 3rem;
+                &:after {
+                    content:"✖";
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
