@@ -26,17 +26,22 @@
     <link rel="canonical" href="{{ url }}">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta property="og:title" content="{% block pageTitle %}{% endblock pageTitle %}">
+    <meta property="og:og:description" content="Zajmuję się tworzniem stron, kodowaniem oraz grafiką. Specjalizuję się w takich cmsach jak Wordpress czy Drupal. Zapraszam do współpracy.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url }}">
     <meta property="og:image" content="{{ url }}/img/preview.jpg">
     <meta name="twitter:url" content="{{ url }}">
     <meta name="twitter:title" content="{% block pageTitle %}{% endblock pageTitle %}">
     <title>{% block pageTitle %}{% endblock pageTitle %}</title>
+    <meta name="description" content="Zajmuję się tworzniem stron, kodowaniem oraz grafiką. Specjalizuję się w takich cmsach jak Wordpress czy Drupal. Zapraszam do współpracy." />
+    <meta name="keywords" content="Jakub Bulanda, portfolio, web developer, frontend, frontend developer, drupal, wordpress" />
     <link rel="stylesheet" href="css/style.min.css" />
     <script src="js/scripts.min.js"></script>
 </head>
 <body{% block pageClass %}{% endblock pageClass %}>
-    {% include "partials/header.twig" %} {% block content %}{% endblock %} {% include "partials/footer.twig" %}
+    {% include "partials/header.twig" %} 
+    {% block content %}{% endblock %} 
+    {% include "partials/footer.twig" %}
 </body>
 
 </html>

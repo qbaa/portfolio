@@ -15,17 +15,13 @@ $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
 
 if ($name && $email && $emailIsValid  && $message) {
 
-	$from = "From: Our Site!";
-  	$to = "kontakt@jakubbulanda.pl"; 
-  	$subject = "Wiadomość od " . $name;
+	$header = "From: ".$email."".PHP_EOL."Content-type: text/plain; charset=utf-8";
+  	$to = "kontakt@jakubbulanda.pl";
+  	$subject = "=?UTF-8?B?".base64_encode("Wiadomość od " . $name ."")."?=";
   
-  	$m = "Wiadomość od ".$name." ".$email."
+  	$m = "Wiadomość od ".$name." ".$email."\r\n\r\n".$message."";
 
-  	".$message."
-
-  	";
-
-	mail($to,$subject,$m,$from);
+	mail($to,$subject,$m,$header);
 	echo "ok";
 } else {
 	echo "error";

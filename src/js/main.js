@@ -32,4 +32,8 @@ $(function () {
 
 	animations.init();
 
+	background.init();
+	
+	loader.init();
+
 });

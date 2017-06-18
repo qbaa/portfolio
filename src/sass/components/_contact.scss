@@ -91,11 +91,14 @@
         .form__status {
             display: none;
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             position: absolute;
             width: 100vw;
             height: 100%;
             z-index: 10;
+            @include min($small-min) {
+                font-size: 2rem;
+            }
             .message {
                 display: none;
                 margin-top: 12%;
