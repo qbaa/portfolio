@@ -1,9 +1,13 @@
 .section.contact {
     padding-top: 50px;
     margin-bottom: 100px;
-    padding-bottom: 20vh;
+    padding-bottom: 70px;
     @include min($medium-min) {
-        margin-bottom: 300px;
+        margin-bottom: 200px;
+        //padding-bottom: 20vh;
+    }
+    @include min($large-min) {
+        padding-bottom: 100px;
     }
     .col {
         position: relative;
@@ -28,10 +32,15 @@
         border-bottom: 2px solid #000;
         outline: none;
         font-size: 1rem;
-        margin-bottom: 100px;
+        margin-bottom: 70px;
         height: 30px;
         padding: 10px 0;
         background: none;
+        transition: opacity 0.5s;
+        overflow: hidden;        
+        @include min($large-min) {
+            margin-bottom: 100px;  
+        }
         @include min($large-min) {
             font-size: 2rem;
             margin-bottom: 150px;
@@ -50,6 +59,11 @@
                 font-size: 1.2rem;
             }
         }
+    }
+    textarea {
+        @include min($large-min) {
+            margin-bottom: 100px;  
+        }        
     }
     button {
         margin: 0 auto;
@@ -82,11 +96,9 @@
     }
     form {
         position: relative;
-        margin-top: 50px;
-        input, 
-        textarea {
-            transition: opacity 0.5s;
-            overflow: hidden;
+        margin-top: 20px;
+        @include min($medium-min) {
+            margin-top: 50px;
         }
         .form__status {
             display: none;

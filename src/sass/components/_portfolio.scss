@@ -1,7 +1,6 @@
 .portfolio {
     @include max($medium-max) {
         padding-bottom: 0;
-        margin-bottom: -20px;
     }
     overflow: hidden;
     z-index: 10;
@@ -10,7 +9,7 @@
             padding-top: 50px;
         }
         @include min($large-min) {
-            padding-top: 100px;
+            //padding-top: 100px;
         }
         &__item {
             position: relative;

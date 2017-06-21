@@ -1,6 +1,7 @@
 .offer {
+    padding-bottom: 50px;
     @include min($largest-min) {
-        margin-bottom: -100px;
+       // margin-bottom: -100px;
     }
     .offer {
         text-align: center;

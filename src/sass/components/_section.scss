@@ -1,11 +1,11 @@
 .section {
-    min-height: 100vh;
+    //min-height: 100vh;
     padding: 5vh 0;
     position: relative;
     z-index: 2;
     background: #fff;
     @include min($medium-min) {
-        padding: 10vh 0;
+        //padding: 10vh 0;
     }
     &.about {
         z-index: 10;

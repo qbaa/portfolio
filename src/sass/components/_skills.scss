@@ -2,7 +2,7 @@
     padding: 50px 0 0;
     text-align: center;
     @include min($largest-min) {
-        padding: 100px 50px 50px;
+        padding: 100px 150px 50px;
     }
     .skill {
         display: inline-block;
@@ -17,14 +17,14 @@
                 width: auto;
             }
             @include min($largest-min) {
-                height: 100px;
+                height: 90px;
             }
         }
-        &.hide {
+        /*&.hide {
             svg {
                 opacity: 0.5;
             }
-        }        
+        }*/       
         &:hover {
             svg {
                 opacity: 1;

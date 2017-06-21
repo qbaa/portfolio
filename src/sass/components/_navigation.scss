@@ -24,6 +24,9 @@ $menu-border: 10px;
     width: $width-line-m;
     height: $height-icon-m;
     transition: transform $transition-time;
+    background: none;
+    border: 0;
+    outline: none;
     @include min($medium-min) {
         width: $width-line;
         height: $height-icon;        
