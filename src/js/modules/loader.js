@@ -1,7 +1,6 @@
 var loader = (function() {
 
     var load = function() {
-        $("html").addClass("js");
 
         var n = 0;
         var c = 0;
