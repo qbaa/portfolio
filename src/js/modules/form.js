@@ -76,40 +76,15 @@ var form = (function() {
             type: "POST",
             data: values
         }).done(function(data){
-            //alert("OK");
             if (data == "ok") {
                 s.$form.addClass('form--ok');
             } else {
                 s.$form.addClass('form--error');
             }
         }).fail(function() {
-            //alert("Blad");
             s.$form.addClass('form--error');
-            //s.$form.addClass('form--ok');
         });        
 
-        /*if ($name.val().length < 1) {
-            $name.addClass('input--error');
-            v = false;
-        } else {
-            $name.removeClass('input--error');
-        }        
-
-        if (!re.test($email.val())) {
-            $email.addClass('input--error');
-            v = false;
-        } else {
-            $email.removeClass('input--error');
-        }        
-
-        if ($name,.val().length < 1) {
-            $name,.addClass('input--error');
-            v = false;
-        } else {
-            $name.removeClass('input--error');
-        }*/  
-
-        //alert("g");
     };
 
     var textarea = document.querySelector('textarea');

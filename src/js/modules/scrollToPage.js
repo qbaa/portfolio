@@ -27,7 +27,6 @@ var scrollToPage = (function() {
             header = $('.header'),
             m = $('.menu-button'),
             timeout;
-            //console.log(h);
 
         n.removeClass("navigation--active");
         header.removeClass("header--navigation-active");
